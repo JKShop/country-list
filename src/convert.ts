@@ -1,13 +1,19 @@
 import countries from "./data/countries.ts";
 import {Country} from "./country.interface.ts";
 
-let JsonCountries = JSON.stringify(countries);
+let Jsoncountries = JSON.stringify(countries);
 
-const write = Deno.writeTextFile("countries.json", JsonCountries);
-write.then(() => console.log("File written to countries.txt"));
+const Jsonwriter = Deno.writeTextFile("countries.json", Jsoncountries);
+Jsonwriter.then(() => console.log("File written to countries.json"));
 
-let SqlHeader = "INSERT INTO core_countries (id, name, iso2, iso3, continent, lat, long) VALUES";
+let Sqlcountries = "INSERT INTO core_countries (id, name, iso2, iso3, continent, latitude, longitude) VALUES\n";
 
 countries.forEach((c: Country) => {
-    console.log(c)
+    Sqlcountries += `('${c.id}','${c.name}','${c.iso2}','${c.iso3}','${c.continent}','${c.lat}','${c.long}'),\n`;
 });
+
+Sqlcountries = Sqlcountries.slice(0, -2);
+Sqlcountries += ";"
+
+const Sqlwriter = Deno.writeTextFile("countries.sql", Sqlcountries);
+Sqlwriter.then(() => console.log("File written to countries.sql"));
