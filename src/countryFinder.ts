@@ -1,4 +1,5 @@
-import { countries } from "./data/countries.ts";
+import countries from "./data/countries";
+import { Country } from "./country.interface";
 
 /**
  * Find country by country iso2 or iso3 code
@@ -51,3 +52,13 @@ export const continent = (continent: string) => {
  */
 
 export const all = (): Array<any> => countries;
+
+/**
+ * A list of all countries names and ID's
+ * @returns {array}
+ *          name & ID
+ */
+export const listNameAndId = (): Array<any> => countries.map((c: Country) => ({
+    id: c.id,
+    name: c.name,
+}));
