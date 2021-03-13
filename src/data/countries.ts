@@ -1,4 +1,4 @@
-export const countries = [
+const countries = [
     {
         id: 4,
         name: "Afghanistan",
@@ -1377,15 +1377,6 @@ export const countries = [
         long: "95.956223",
     },
     {
-        id: 104,
-        name: "Burma",
-        iso2: "BU",
-        iso3: "BUR",
-        continent: "",
-        lat: 22,
-        long: 98,
-    },
-    {
         id: 516,
         name: "Namibia",
         iso2: "NA",
@@ -2259,3 +2250,5 @@ export const countries = [
         long: "29.154857",
     },
 ];
+
+export default countries;
