@@ -1,4 +1,4 @@
-import { Country } from "./country.interface.ts";
+import { Country } from './country.interface';
 
 // const readCountries = async (
 //     fileName: string = "./data/countries.json"
