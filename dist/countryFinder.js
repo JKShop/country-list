@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.allCurrencies = exports.listNameAndId = exports.all = exports.continent = exports.name = exports.id = exports.countryCode = void 0;
+exports.getCurrencyWithIsoNumber = exports.allCurrencies = exports.listNameAndId = exports.all = exports.continent = exports.name = exports.id = exports.countryCode = void 0;
 var countries_1 = require("./data/countries");
 var currencies_1 = require("./data/currencies");
 /**
@@ -76,7 +76,8 @@ exports.allCurrencies = allCurrencies;
 * @returns {string}
 *          currency symbol
 */
-var getMajorSymbolWithIsoNumber = function (isoNumber) {
+var getCurrencyWithIsoNumber = function (isoNumber) {
     return currencies_1.default.filter(function (c) { return c.iso.number == isoNumber; });
 };
+exports.getCurrencyWithIsoNumber = getCurrencyWithIsoNumber;
 //# sourceMappingURL=countryFinder.js.map

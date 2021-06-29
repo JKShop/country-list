@@ -79,6 +79,6 @@ export const listNameAndId = (): Array<any> => countries.map((c: Country) => ({
  *          currency symbol
  */
 
-const getMajorSymbolWithIsoNumber = (isoNumber: string) => {
+export const getCurrencyWithIsoNumber = (isoNumber: string) => {
     return currencies.filter((c) => c.iso.number == isoNumber);
 };
