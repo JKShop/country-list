@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.allCurrencies = exports.listNameAndId = exports.all = exports.continent = exports.name = exports.id = exports.countryCode = void 0;
+exports.getMajorSymbolWithIsoNumber = exports.allCurrencies = exports.listNameAndId = exports.all = exports.continent = exports.name = exports.id = exports.countryCode = void 0;
 var countries_1 = require("./data/countries");
 var currencies_1 = require("./data/currencies");
 /**
@@ -71,4 +71,18 @@ exports.listNameAndId = listNameAndId;
  */
 var allCurrencies = function () { return currencies_1.default; };
 exports.allCurrencies = allCurrencies;
+/**
+* Get symbol based on ISO number
+* @returns {array}
+*          list of all available currencies
+*/
+var getMajorSymbolWithIsoNumber = function (isoNumber) {
+    currencies_1.default.map(function (currency) {
+        if (currency.iso.number === isoNumber) {
+            return currency.units.major.symbol;
+        }
+    });
+    return null;
+};
+exports.getMajorSymbolWithIsoNumber = getMajorSymbolWithIsoNumber;
 //# sourceMappingURL=countryFinder.js.map

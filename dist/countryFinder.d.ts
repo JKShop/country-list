@@ -74,3 +74,9 @@ export declare const listNameAndId: () => Array<any>;
  *          list of all available currencies
  */
 export declare const allCurrencies: () => Array<any>;
+/**
+* Get symbol based on ISO number
+* @returns {array}
+*          list of all available currencies
+*/
+export declare const getMajorSymbolWithIsoNumber: (isoNumber: string) => string | null;
