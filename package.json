@@ -1,6 +1,6 @@
 {
   "name": "jkshop-country-list",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Get world countries. \\ Minimal countries information finder",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

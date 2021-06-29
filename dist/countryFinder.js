@@ -1,7 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.listNameAndId = exports.all = exports.continent = exports.name = exports.id = exports.countryCode = void 0;
+exports.allCurrencies = exports.listNameAndId = exports.all = exports.continent = exports.name = exports.id = exports.countryCode = void 0;
 var countries_1 = require("./data/countries");
+var currencies_1 = require("./data/currencies");
 /**
  * Find country by country iso2 or iso3 code
  * eg: US || us for USA
@@ -63,4 +64,11 @@ var listNameAndId = function () { return countries_1.default.map(function (c) { 
     name: c.name,
 }); }); };
 exports.listNameAndId = listNameAndId;
+/**
+ * A list of all available currencies with the following parameters
+ * @returns {array}
+ *          list of all available currencies
+ */
+var allCurrencies = function () { return currencies_1.default; };
+exports.allCurrencies = allCurrencies;
 //# sourceMappingURL=countryFinder.js.map

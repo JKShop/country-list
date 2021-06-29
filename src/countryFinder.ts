@@ -1,4 +1,6 @@
 import countries from "./data/countries";
+import currencies from "./data/currencies";
+
 import { Country } from "./country.interface";
 
 /**
@@ -62,3 +64,11 @@ export const listNameAndId = (): Array<any> => countries.map((c: Country) => ({
     id: c.id,
     name: c.name,
 }));
+
+/**
+ * A list of all available currencies with the following parameters
+ * @returns {array}
+ *          list of all available currencies
+ */
+
+ export const allCurrencies = (): Array<any> => currencies;

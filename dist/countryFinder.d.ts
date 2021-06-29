@@ -8,12 +8,6 @@ export declare const countryCode: (code: string) => {
     id: number;
     name: string;
     iso2: string;
-    /**
-     * Find country by country iso2 or iso3 code
-     * eg: US || us for USA
-     *     ET || et || ETH || eth for Ethiopia
-     * @param {string} code
-     */
     iso3: string;
     continent: string;
     lat: number;
@@ -27,12 +21,6 @@ export declare const id: (id: number) => {
     id: number;
     name: string;
     iso2: string;
-    /**
-     * Find country by country iso2 or iso3 code
-     * eg: US || us for USA
-     *     ET || et || ETH || eth for Ethiopia
-     * @param {string} code
-     */
     iso3: string;
     continent: string;
     lat: number;
@@ -47,12 +35,6 @@ export declare const name: (name: string) => {
     id: number;
     name: string;
     iso2: string;
-    /**
-     * Find country by country iso2 or iso3 code
-     * eg: US || us for USA
-     *     ET || et || ETH || eth for Ethiopia
-     * @param {string} code
-     */
     iso3: string;
     continent: string;
     lat: number;
@@ -69,12 +51,6 @@ export declare const continent: (continent: string) => {
     id: number;
     name: string;
     iso2: string;
-    /**
-     * Find country by country iso2 or iso3 code
-     * eg: US || us for USA
-     *     ET || et || ETH || eth for Ethiopia
-     * @param {string} code
-     */
     iso3: string;
     continent: string;
     lat: number;
@@ -92,3 +68,9 @@ export declare const all: () => Array<any>;
  *          name & ID
  */
 export declare const listNameAndId: () => Array<any>;
+/**
+ * A list of all available currencies with the following parameters
+ * @returns {array}
+ *          list of all available currencies
+ */
+export declare const allCurrencies: () => Array<any>;
