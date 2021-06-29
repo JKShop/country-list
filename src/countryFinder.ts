@@ -1,7 +1,7 @@
 import countries from "./data/countries";
 import currencies from "./data/currencies";
 
-import { Country } from "./country.interface";
+import { Country, Currency } from "./country.interface";
 
 /**
  * Find country by country iso2 or iso3 code
@@ -79,12 +79,6 @@ export const listNameAndId = (): Array<any> => countries.map((c: Country) => ({
  *          currency symbol
  */
 
-  export const getMajorSymbolWithIsoNumber = (isoNumber: string): string | null => {
-    currencies.map(currency => {
-        if (currency.iso.number === isoNumber) {
-            return currency.units.major.symbol;
-        }
-    });
-
-    return null;
-  };
+const getMajorSymbolWithIsoNumber = (isoNumber: string) => {
+    return currencies.filter((c) => c.iso.number == isoNumber);
+};
