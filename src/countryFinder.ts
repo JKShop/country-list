@@ -89,10 +89,12 @@ export const getCurrencyWithIsoNumber = (isoNumber: string) => {
  *          currency symbol
  */
 
- export const getSymbolWithIsoNumber = (isoNumber: string) => {
-    currencies.map((currency) => {
+ export const getSymbolWithIsoNumber = (isoNumber: string): string => {
+    for (let currency of currencies) {
         if (currency.iso.number === isoNumber) {
             return currency.units.major.symbol;
         }
-    });
+    }
+
+    return `No symbol found with ${isoNumber}.`;
 };
