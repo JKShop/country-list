@@ -74,11 +74,25 @@ export const listNameAndId = (): Array<any> => countries.map((c: Country) => ({
  export const allCurrencies = (): Array<any> => currencies;
 
  /**
+ * Get currency based on ISO number
+ * @returns {array}
+ *          currency
+ */
+
+export const getCurrencyWithIsoNumber = (isoNumber: string) => {
+    return currencies.filter((c) => c.iso.number == isoNumber);
+};
+
+/**
  * Get symbol based on ISO number
  * @returns {string}
  *          currency symbol
  */
 
-export const getCurrencyWithIsoNumber = (isoNumber: string) => {
-    return currencies.filter((c) => c.iso.number == isoNumber);
+ export const getSymbolWithIsoNumber = (isoNumber: string) => {
+    currencies.map((currency) => {
+        if (currency.iso.number === isoNumber) {
+            return currency.units.major.symbol;
+        }
+    });
 };
