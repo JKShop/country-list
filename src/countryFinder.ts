@@ -90,9 +90,9 @@ export const getCurrencyWithIsoNumber = (isoNumber: string) => {
  */
 
  export const getSymbolWithIsoNumber = (isoNumber: string): string => {
-    for (let currency of currencies) {
-        if (currency.iso.number === isoNumber) {
-            return currency.units.major.symbol;
+    for (let i = 0; i < currencies.length; i++) {
+        if (currencies[i].iso.number === isoNumber) {
+            return currencies[i].units.major.symbol;
         }
     }
 
