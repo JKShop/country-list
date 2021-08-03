@@ -98,3 +98,19 @@ export const getCurrencyWithIsoNumber = (isoNumber: string) => {
 
     return `No symbol found with ${isoNumber}.`;
 };
+
+/**
+ * Get symbol based on ISO code
+ * @returns {string}
+ *          currency symbol
+ */
+
+ export const getSymbolWithIsoCode = (isoCode: string): string => {
+    for (let i = 0; i < currencies.length; i++) {
+        if (currencies[i].iso.code === isoCode) {
+            return currencies[i].units.major.symbol;
+        }
+    }
+
+    return `No symbol found with ${isoCode}.`;
+};
