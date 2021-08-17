@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getCurrencyWithIsoNumber = exports.allCurrencies = exports.listNameAndId = exports.all = exports.continent = exports.name = exports.id = exports.countryCode = void 0;
+exports.getSymbolWithIsoCode = exports.getSymbolWithIsoNumber = exports.getCurrencyWithIsoNumber = exports.allCurrencies = exports.listNameAndId = exports.all = exports.continent = exports.name = exports.id = exports.countryCode = void 0;
 var countries_1 = require("./data/countries");
 var currencies_1 = require("./data/currencies");
 /**
@@ -72,12 +72,40 @@ exports.listNameAndId = listNameAndId;
 var allCurrencies = function () { return currencies_1.default; };
 exports.allCurrencies = allCurrencies;
 /**
-* Get symbol based on ISO number
-* @returns {string}
-*          currency symbol
+* Get currency based on ISO number
+* @returns {array}
+*          currency
 */
 var getCurrencyWithIsoNumber = function (isoNumber) {
     return currencies_1.default.filter(function (c) { return c.iso.number == isoNumber; });
 };
 exports.getCurrencyWithIsoNumber = getCurrencyWithIsoNumber;
+/**
+ * Get symbol based on ISO number
+ * @returns {string}
+ *          currency symbol
+ */
+var getSymbolWithIsoNumber = function (isoNumber) {
+    for (var i = 0; i < currencies_1.default.length; i++) {
+        if (currencies_1.default[i].iso.number === isoNumber) {
+            return currencies_1.default[i].units.major.symbol;
+        }
+    }
+    return "No symbol found with " + isoNumber + ".";
+};
+exports.getSymbolWithIsoNumber = getSymbolWithIsoNumber;
+/**
+ * Get symbol based on ISO code
+ * @returns {string}
+ *          currency symbol
+ */
+var getSymbolWithIsoCode = function (isoCode) {
+    for (var i = 0; i < currencies_1.default.length; i++) {
+        if (currencies_1.default[i].iso.code === isoCode) {
+            return currencies_1.default[i].units.major.symbol;
+        }
+    }
+    return "No symbol found with " + isoCode + ".";
+};
+exports.getSymbolWithIsoCode = getSymbolWithIsoCode;
 //# sourceMappingURL=countryFinder.js.map

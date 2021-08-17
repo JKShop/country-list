@@ -75,9 +75,9 @@ export declare const listNameAndId: () => Array<any>;
  */
 export declare const allCurrencies: () => Array<any>;
 /**
-* Get symbol based on ISO number
-* @returns {string}
-*          currency symbol
+* Get currency based on ISO number
+* @returns {array}
+*          currency
 */
 export declare const getCurrencyWithIsoNumber: (isoNumber: string) => ({
     name: string;
@@ -162,3 +162,15 @@ export declare const getCurrencyWithIsoNumber: (isoNumber: string) => ({
         rare: never[];
     };
 })[];
+/**
+ * Get symbol based on ISO number
+ * @returns {string}
+ *          currency symbol
+ */
+export declare const getSymbolWithIsoNumber: (isoNumber: string) => string;
+/**
+ * Get symbol based on ISO code
+ * @returns {string}
+ *          currency symbol
+ */
+export declare const getSymbolWithIsoCode: (isoCode: string) => string;
